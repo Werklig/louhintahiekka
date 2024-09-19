@@ -105,21 +105,15 @@ $(".ref_slider").each(function () {
         { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
         0
       );
-      tl.fromTo(nextItemTitle, { display: "flex" }, { display: "none" }, 0);
+      tl.fromTo(nextItemTitle, { opacity: 0 }, { opacity: 1 }, 0);
       tl.fromTo(
         prevItem,
         { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
         { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)" },
         0
       );
-      tl.fromTo(prevItemTitle, { display: "none" }, { display: "flex" }, 0);
+      tl.fromTo(prevItemTitle, { opacity: 1 }, { opacity: 0 }, 0);
     }
-    tl.fromTo(
-      nextItemTitle.find(".ref_slider_title"),
-      { yPercent: titleFrom },
-      { yPercent: 0, duration: 0.5, stagger: { amount: 0.5 } },
-      titleDelay
-    );
 
     activeIndex = nextIndex;
   }
