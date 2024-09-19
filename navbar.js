@@ -9,7 +9,7 @@ const targetScrollY = remToPixels(10);
 // Store the initial data-theme value
 const navbarWrap = document.querySelector(".navbar_wrap");
 const navbar = document.querySelector(".navbar_menu");
-//const navbarBg = document.querySelector(".navbar_menu_bg");
+const navbarBg = document.querySelector(".navbar_menu_bg");
 const initialTheme = navbarWrap.getAttribute("data-theme");
 const fullLogo = document.querySelector(".is-full-logo");
 const symbolLogo = document.querySelector(".is-symbol");
@@ -22,7 +22,7 @@ function handleScroll() {
     navbarWrap.classList.add("is-scrolled");
     navbarWrap.setAttribute("data-theme", "light");
     navbar.classList.add("is-scrolled");
-    //navbarBg.classList.add("is-scrolled");
+    navbarBg.classList.add("is-scrolled");
     //navbar.setAttribute("data-theme", "light");
     navbarBlur.classList.add("is-scrolled");
     fullLogo.style.display = "none";
@@ -30,7 +30,7 @@ function handleScroll() {
   } else {
     navbarWrap.classList.remove("is-scrolled");
     navbar.classList.remove("is-scrolled");
-    //navbarBg.classList.remove("is-scrolled");
+    navbarBg.classList.remove("is-scrolled");
     navbarBlur.classList.remove("is-scrolled");
     fullLogo.style.display = "block";
     symbolLogo.style.display = "none";
