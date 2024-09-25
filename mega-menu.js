@@ -75,6 +75,7 @@ $(document).ready(function () {
       } else {
         tl.reverse().eventCallback("onReverseComplete", function () {
           $(body).removeClass("no-scroll");
+          tl.timeScale(-2);
           if (initialTheme === "light") {
             $(navbarWrap).attr("data-theme", "light");
           } else if (window.scrollY >= remToPixels(30)) {
