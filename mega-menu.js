@@ -19,7 +19,7 @@ $(document).ready(function () {
   }
 
   tl.set(body, { overflow: "visible" }) // Disable scrolling when menu is open
-    .set(megaMenuItem, { opacity: 0, top: "2rem" }) // Set initial opacity of mega-menu_item to 0
+    .set(megaMenuItem, { opacity: 0, top: "1rem" }) // Set initial opacity of mega-menu_item to 0
     .set(megaMenuCmsRow, { opacity: 0 })
     .set(textLink, { opacity: 0 })
     .set(megaMenuBlur, { opacity: 0 }) // Set initial opacity of mega-menu_cms_row to 0
