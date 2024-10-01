@@ -53,5 +53,4 @@ $('.is-menu').on('click', function() {
   $('.navbar_menu').toggleClass('is-open');
   $('.navbar_layer').toggleClass('is-open');
   $('.navbar_menu_item_icon_line').toggleClass('is-open');
-  //$('body').toggleClass('no-scroll')
 });
