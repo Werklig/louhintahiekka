@@ -26,7 +26,7 @@ $(document).ready(function () {
     .set(menuItem, { opacity: 100, pointerEvents: "auto" }) // Set initial opacity of mega-menu_cms_row to 0
     //.set(localesItem, { opacity: 0 }) // Set initial opacity of mega-menu_cms_row to 0
     .set(navbarMenuBg, { opacity: 1 }) // Set initial opacity of mega-menu_cms_row to 0
-    //.to(body, { overflow: "hidden", duration: 0 }, "0") // Disable scroll when menu is open
+    .to(body, { overflow: "hidden", duration: 0 }, "0") // Disable scroll when menu is open
     .to(
       megaMenuBlur,
       {
