@@ -35,6 +35,7 @@ $("#ref_slider_content_collection .ref_slider_item").each(function(index, item){
 $("#ref_slider_content_collection").empty().remove();
 
 
+
 $(".ref_slider").each(function () {
   // Find all .ref_slider_item.is-img elements
   let childItems = $(this).find(".ref_slider_item.is-img");
@@ -57,35 +58,44 @@ $(".ref_slider").each(function () {
 
   // DOT LINES
   let tl2 = gsap.timeline({ repeat: -1 });
-  childDots.each(function (index) {
-    tl2.addLabel(`step${index}`);
-    let duration = 4;
+  let duration_default = 4;
 
-    //check if slide is video
-    let iframe = childItems.eq(index).find('iframe');
-    if (iframe.length > 0) {
-      let player = new Vimeo.Player(iframe);
+  // if first item video -> wait for asynch
+  let iframe = childItems.eq(0).find('iframe');
+  if (iframe.length > 0) {
+    let player = new Vimeo.Player(iframe);
+      //wait for video duration
       player.getDuration().then(function(video_duration) {
-        tl2.to(childDots.eq(index).find(".ref_slider_dot_line"), {
-          scaleX: "1.0",
-          ease: "none",
-          duration: video_duration,
-          onComplete: () => {
-            goNext(index + 1);
-          },
+        childDots.each(function (index) {
+          tl2.addLabel(`step${index}`);
+          let duration = duration_default;
+          if (index == 0) {
+            duration = video_duration;
+          }
+          tl2.to($(this).find(".ref_slider_dot_line"), {
+            scaleX: "1.0",
+            ease: "none",
+            duration: duration,
+            onComplete: () => {
+              goNext(index + 1);
+            },
+          });
         });
       });
-    }else{
+  }else{
+    //if not asynch -> basic loop
+    childDots.each(function (index) {
+      tl2.addLabel(`step${index}`);
       tl2.to($(this).find(".ref_slider_dot_line"), {
         scaleX: "1.0",
         ease: "none",
-        duration: duration,
+        duration: duration_default,
         onComplete: () => {
           goNext(index + 1);
         },
       });
-    }
-  });
+    });
+  }
 
   // MAIN SLIDER CODE
   function moveSlide(nextIndex, forwards) {
