@@ -35,7 +35,8 @@ $("#ref_slider_content_collection .ref_slider_item").each(function(index, item){
 $("#ref_slider_content_collection").empty().remove();
 
 
-
+//!! only works with 1 video
+//and it has to be the first of the slider
 $(".ref_slider").each(function () {
   // Find all .ref_slider_item.is-img elements
   let childItems = $(this).find(".ref_slider_item.is-img");
@@ -154,6 +155,18 @@ $(".ref_slider").each(function () {
         0
       );
       tl.fromTo(prevItemTitle, { opacity: 1 }, { opacity: 0 }, 0);
+    }
+
+    //pause/play@0s videos
+    let player = fasle;
+    let iframe_prev = prevItem.find('iframe');
+    let iframe_next = nextItem.find('iframe');
+    if (iframe_prev.length > 0) {
+      player = new Vimeo.Player(iframe_prev);
+      player.pause();
+    }else if(iframe_next.length > 0){
+      player = new Vimeo.Player(iframe_next);
+      player.setCurrentTime(0);
     }
 
     activeIndex = nextIndex;
