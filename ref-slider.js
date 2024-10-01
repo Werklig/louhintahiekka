@@ -53,7 +53,7 @@ $(".ref_slider").each(function () {
     if (iframe.length > 0) {
       let player = new Vimeo.Player(iframe);
       player.getDuration().then(function(video_duration) {
-        tl2.to($(this).find(".ref_slider_dot_line"), {
+        tl2.to(childDots.eq(index).find(".ref_slider_dot_line"), {
           scaleX: "1.0",
           ease: "none",
           duration: video_duration,
