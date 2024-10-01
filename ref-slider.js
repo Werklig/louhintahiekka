@@ -45,11 +45,20 @@ $(".ref_slider").each(function () {
   // DOT LINES
   let tl2 = gsap.timeline({ repeat: -1 });
   childDots.each(function (index) {
+    let duration = 4;
+
+    //check if slide is video
+    let iframe = childItems.eq(index).find('iframe');
+    if (iframe.length > 0) {
+      let player = new Vimeo.Player(iframe);
+      duration = player.getDuration();
+    }
+
     tl2.addLabel(`step${index}`);
     tl2.to($(this).find(".ref_slider_dot_line"), {
       scaleX: "1.0",
       ease: "none",
-      duration: 4,
+      duration: duration,
       onComplete: () => {
         goNext(index + 1);
       },
