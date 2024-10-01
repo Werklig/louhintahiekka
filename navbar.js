@@ -47,3 +47,12 @@ window.addEventListener("scroll", handleScroll);
 
 // Initial check in case the page is already scrolled
 handleScroll();
+
+// Opening mega-menu
+$('.is-menu').on('click', function() {
+  $('.navbar_menu').toggleClass('is-open');
+  $('.navbar_layer').toggleClass('is-open');
+  $('.navbar_menu_btn_line').toggleClass('is-open');
+  $('.navbar_menu_item_icon_line').toggleClass('is-open');
+  $('body').toggleClass('no-scroll')
+});
