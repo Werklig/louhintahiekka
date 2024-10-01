@@ -157,7 +157,7 @@ $(".ref_slider").each(function () {
       tl.fromTo(prevItemTitle, { opacity: 1 }, { opacity: 0 }, 0);
     }
 
-    //pause/play@0s videos
+    // pause or play @ 0s videos
     let player = fasle;
     let iframe_prev = prevItem.find('iframe');
     let iframe_next = nextItem.find('iframe');
