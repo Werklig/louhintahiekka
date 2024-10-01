@@ -7,6 +7,7 @@ $(document).ready(function () {
         let play = $('#hero_video_play');
         play.show().addEventListener('click', function() {
             player.play();
+            thid.hide();
         });
     }
 });
