@@ -5,7 +5,7 @@ $(document).ready(function () {
         let iframe = $('#hero_video iframe');
         let player = new Vimeo.Player(iframe);
         let play = $('#hero_video_play');
-        play.show().addEventListener('click', function() {
+        play.show().on('click', function() {
             player.play();
             play.hide();
         });
