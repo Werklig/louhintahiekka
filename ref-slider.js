@@ -22,6 +22,19 @@ window.addEventListener("load", function () {
   });
 });
 
+//build the slider
+//collect video and images
+//and build dots
+$("#ref_slider_content_collection .ref_slider_item").each(function(index, item){
+  //insert slide
+  $('#ref_slider_content_target').append(item);
+  //insert dot template clone
+  $('#ref_slider_dot_list').append($('#slide_dot_template').clone().removeAttr('id'));
+});
+//clean up
+$("#ref_slider_content_collection").empty().remove();
+
+
 $(".ref_slider").each(function () {
   // Find all .ref_slider_item.is-img elements
   let childItems = $(this).find(".ref_slider_item.is-img");
