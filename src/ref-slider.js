@@ -132,7 +132,7 @@ $(".ref_slider").each(function () {
         { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
         0
       );
-      tl.fromTo(nextItemTitle, { opacity: 0 }, { opacity: 1 }, 0);
+      if (nextItemTitle.length > 0) tl.fromTo(nextItemTitle, { opacity: 0 }, { opacity: 1 }, 0);
       tl.fromTo(
         prevItem,
         { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
@@ -147,7 +147,7 @@ $(".ref_slider").each(function () {
         { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
         0
       );
-      tl.fromTo(nextItemTitle, { opacity: 0 }, { opacity: 1 }, 0);
+      if (nextItemTitle.length > 0) tl.fromTo(nextItemTitle, { opacity: 0 }, { opacity: 1 }, 0);
       tl.fromTo(
         prevItem,
         { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
