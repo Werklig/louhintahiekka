@@ -166,7 +166,9 @@ $(".ref_slider").each(function () {
       player.pause();
     }else if(iframe_next.length > 0){
       player = new Vimeo.Player(iframe_next);
-      player.setCurrentTime(0);
+      player.setCurrentTime(0).then(function(seconds) {
+        player.play();
+      });
     }
 
     activeIndex = nextIndex;
