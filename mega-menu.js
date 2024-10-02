@@ -60,7 +60,7 @@ $(document).ready(function () {
       opacity: 1,
       duration: 0.3,
       top: "0rem",
-      stagger: 0.1,
+      //stagger: 0.1,
     }) // Stagger animate mega-menu_item opacity to 100%
     .to(megaMenuCmsRow, { opacity: 1, duration: 0.4, stagger: 0.25 }, "<0.2")
     .to(textLink, { opacity: 1, duration: 0.3, stagger: 0.25 }, "<0");
