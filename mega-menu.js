@@ -63,7 +63,7 @@ $(document).ready(function () {
       //stagger: 0.1,
     }) // Stagger animate mega-menu_item opacity to 100%
     .to(megaMenuCmsRow, { opacity: 1, duration: 0.4, stagger: 0.25 }, "<0.2")
-    .to(textLink, { opacity: 1, duration: 0.3, stagger: 0.25 }, "<0");
+    .to(textLink, { opacity: 1, duration: 0.3, stagger: 0.1 }, "<0");
   //.to(localesItem, { opacity: 1, duration: 0.3, stagger: 0.25 }, "<0.4");
 
   // Click event to toggle the timeline and theme
