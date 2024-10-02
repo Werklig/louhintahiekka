@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
 //build the slider
 //collect video and images
 //and build dots
-$("#ref_slider_content_collection .ref_slider_item").each(function(index, item){
+$("#ref_slider_content_collection .ref_slider_item").not('.w-condition-invisible').each(function(index, item){
   //insert slide
   $('#ref_slider_content_target').append(item);
   //insert dot template clone
