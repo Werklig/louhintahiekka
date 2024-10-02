@@ -3,9 +3,12 @@ function updateGridColumns() {
   const screenWidth = window.innerWidth;
 
   // Select all elements with class figures_item_wrap and figures_list
-  const figuresList = document.querySelector('.figures_list');
+  /*const figuresList = document.querySelector('.figures_list');
   const figuresItems = figuresList.querySelectorAll('.figures_item_wrap');
-  const invisibleFigures = figuresList.querySelectorAll('.figures_item_wrap.w-condition-invisible');
+  const invisibleFigures = figuresList.querySelectorAll('.figures_item_wrap.w-condition-invisible');*/
+  const figuresList = $('.figures_list');
+  const figuresItems = figuresList.find('.figures_item_wrap');
+  const invisibleFigures = figuresItems.is('.w-condition-invisible');
 
   // Apply CSS only if screen width is greater than 1266px
   if (screenWidth > 1266) {
