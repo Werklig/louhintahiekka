@@ -158,7 +158,7 @@ $(".ref_slider").each(function () {
     }
 
     // pause or play @ 0s videos
-    let player = fasle;
+    let player = false;
     let iframe_prev = prevItem.find('iframe');
     let iframe_next = nextItem.find('iframe');
     if (iframe_prev.length > 0) {
