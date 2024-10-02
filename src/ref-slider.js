@@ -139,7 +139,7 @@ $(".ref_slider").each(function () {
         { clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" },
         0
       );
-      tl.fromTo(prevItemTitle, { opacity: 1 }, { opacity: 0 }, 0);
+      if (prevItemTitle.length > 0) tl.fromTo(prevItemTitle, { opacity: 1 }, { opacity: 0 }, 0);
     } else {
       tl.fromTo(
         nextItem,
@@ -154,7 +154,7 @@ $(".ref_slider").each(function () {
         { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)" },
         0
       );
-      tl.fromTo(prevItemTitle, { opacity: 1 }, { opacity: 0 }, 0);
+      if (prevItemTitle.length > 0) tl.fromTo(prevItemTitle, { opacity: 1 }, { opacity: 0 }, 0);
     }
 
     // pause or play @ 0s videos
