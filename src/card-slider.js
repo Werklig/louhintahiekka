@@ -12,6 +12,7 @@ function initSwiper($slider) {
     loop: false,
     spaceBetween: baseRem * 3, // Use the dynamic baseRem for spaceBetween
     allowTouchMove: true,
+    slidesPerView: 1,
     // mousewheel: true,
 
     breakpoints: {
@@ -60,4 +61,3 @@ $(".slider").each(function (index) {
     swiperInstance = initSwiper($slider); // Reinitialize Swiper with updated settings
   });
 });
-
